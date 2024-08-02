@@ -1,5 +1,6 @@
 package com.solozabal.oopbank;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -33,18 +34,13 @@ public class Main {
             int opcao = getUserInput();
 
             switch (opcao) {
-                case OPTION_REGISTER:
-                    cadastrarCliente();
-                    break;
-                case OPTION_LOGIN:
-                    login();
-                    break;
-                case OPTION_EXIT:
+                case OPTION_REGISTER -> cadastrarCliente();
+                case OPTION_LOGIN -> login();
+                case OPTION_EXIT -> {
                     System.out.println("Saindo...");
-                    return;
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
+                    System.exit(0);
+                }
+                default -> System.out.println("Opção inválida!");
             }
         }
     }
@@ -109,13 +105,13 @@ public class Main {
         int tipoConta = getUserInput();
 
         Conta conta;
-        if (tipoConta == ACCOUNT_CHECKING) {
-            conta = new ContaCorrente(cliente);
-        } else if (tipoConta == ACCOUNT_SAVINGS) {
-            conta = new ContaPoupanca(cliente);
-        } else {
-            System.out.println("Tipo de conta inválido!");
-            return;
+        switch (tipoConta) {
+            case ACCOUNT_CHECKING -> conta = new ContaCorrente(cliente);
+            case ACCOUNT_SAVINGS -> conta = new ContaPoupanca(cliente);
+            default -> {
+                System.out.println("Tipo de conta inválido!");
+                return;
+            }
         }
 
         banco.getContas().add(conta);
@@ -130,24 +126,15 @@ public class Main {
             int opcao = getUserInput();
 
             switch (opcao) {
-                case OPERATION_DEPOSIT:
-                    depositar(conta);
-                    break;
-                case OPERATION_BALANCE:
-                    conta.imprimirExtrato();
-                    break;
-                case OPERATION_TRANSFER:
-                    transferir(conta);
-                    break;
-                case OPERATION_WITHDRAW:
-                    sacar(conta);
-                    break;
-                case OPERATION_EXIT:
+                case OPERATION_DEPOSIT -> depositar(conta);
+                case OPERATION_BALANCE -> conta.imprimirExtrato();
+                case OPERATION_TRANSFER -> transferir(conta);
+                case OPERATION_WITHDRAW -> sacar(conta);
+                case OPERATION_EXIT -> {
                     System.out.println("Saindo...");
-                    return;
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
+                    System.exit(0);
+                }
+                default -> System.out.println("Opção inválida!");
             }
         }
     }

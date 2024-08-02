@@ -47,6 +47,18 @@ public abstract class Conta implements IConta {
         return cliente;
     }
 
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
     @Override
     public void imprimirExtrato() {
         // Implement this method in subclasses

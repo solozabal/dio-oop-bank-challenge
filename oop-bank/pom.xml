@@ -24,7 +24,23 @@
     <artifactId>junit-jupiter-engine</artifactId>
     <version>5.7.0</version>
     <scope>test</scope>
-  </dependency> 
+  </dependency>
+
+  <!-- System Rules dependency -->
+    <dependency>
+        <groupId>com.github.stefanbirkner</groupId>
+        <artifactId>system-rules</artifactId>
+        <version>1.19.0</version>
+        <scope>test</scope>
+    </dependency> 
+
+    <!-- System Lambda dependency -->
+    <dependency>
+        <groupId>com.github.stefanbirkner</groupId>
+        <artifactId>system-lambda</artifactId>
+        <version>1.2.0</version>
+        <scope>test</scope>
+    </dependency>
   
     <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
     <dependency>
