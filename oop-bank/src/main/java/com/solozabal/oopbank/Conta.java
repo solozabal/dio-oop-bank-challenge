@@ -1,12 +1,6 @@
 package com.solozabal.oopbank;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public abstract class Conta implements IConta {
-
     private static final int AGENCIA_PADRAO = 1;
     private static int SEQUENCIAL = 1;
 
@@ -16,7 +10,7 @@ public abstract class Conta implements IConta {
     protected Cliente cliente;
 
     public Conta(Cliente cliente) {
-        this.agencia = Conta.AGENCIA_PADRAO;
+        this.agencia = AGENCIA_PADRAO;
         this.numero = SEQUENCIAL++;
         this.cliente = cliente;
     }
@@ -49,13 +43,12 @@ public abstract class Conta implements IConta {
         return saldo;
     }
 
-    protected void imprimirInfosComuns() {
-        System.out.printf("Titular: %s%n", this.cliente.getNome());
-        System.out.printf("Agencia: %d%n", this.agencia);
-        System.out.printf("Numero: %d%n", this.numero);
-        System.out.printf("Saldo: %.2f%n", this.saldo);
+    public Cliente getCliente() {
+        return cliente;
     }
 
     @Override
-    public abstract void imprimirExtrato();
+    public void imprimirExtrato() {
+        // Implement this method in subclasses
+    }
 }
