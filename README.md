@@ -1,21 +1,34 @@
-# Digital Bank Application
+# Conceitos Aprendidos no Exercício
 
-This is a simple digital bank application implemented in Java. It allows users to register, log in, create accounts, and perform basic banking operations such as deposit, withdrawal, and transfer between accounts.
+## 1. Programação Orientada a Objetos (POO)
+Classes e Objetos: Definição de classes (Banco, Cliente, Conta, ContaCorrente, ContaPoupanca) e criação de objetos a partir dessas classes.
+Encapsulamento: Uso de modificadores de acesso (private, public) para proteger os dados e métodos das classes.
+Herança: ContaCorrente e ContaPoupanca herdam de Conta.
+Polimorfismo: Uso de métodos sobrecarregados e sobrescritos para diferentes tipos de contas.
 
-## Project Structure
+## 2. Estruturas de Controle
+Laços de Repetição: Uso de while para criar loops que permitem a interação contínua do usuário com o sistema.
+Condicionais: Uso de if-else e switch-case para tomar decisões com base na entrada do usuário.
 
-The project includes the following classes:
+## 3. Coleções
+Listas: Uso de ArrayList para armazenar clientes e contas.
+Streams: Uso de streams para filtrar e encontrar elementos em coleções.
 
-- **Banco**: Manages the list of accounts and provides methods to access and modify the bank's name and accounts.
-- **Cliente**: Represents a client of the bank with attributes for name, email, and password.
-- **Conta**: Abstract base class for bank accounts with methods for deposit, withdrawal, transfer, and printing the account statement.
-- **ContaCorrente**: A subclass of `Conta` representing a checking account.
-- **ContaPoupanca**: A subclass of `Conta` representing a savings account.
-- **IConta**: Interface that defines methods required for all account types.
+## 4. Entrada e Saída (I/O)
+Scanner: Uso da classe Scanner para ler a entrada do usuário a partir do console.
+System.out.println: Uso para exibir mensagens no console.
 
-## Class Diagram
+## 5. Tratamento de Erros
+Validação de Entrada: Verificação de entradas inválidas e solicitação de nova entrada ao usuário.
 
-Below is the class diagram for the digital bank application:
+## 6. Design de Interface de Usuário (UI)
+Menus: Criação de menus interativos para guiar o usuário através das opções disponíveis no sistema.
+
+## 7. Boas Práticas de Programação
+Constantes: Uso de constantes (final static) para valores fixos, melhorando a legibilidade e manutenção do código.
+Métodos Privados: Encapsulamento de lógica em métodos privados para modularizar e organizar o código.
+
+### Diagrama em Mermaid
 
 ```mermaid
 classDiagram
